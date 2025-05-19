@@ -1,6 +1,6 @@
-pub mod vec3;
+pub mod color;
+use color::Color;
 use indicatif::{ProgressBar, ProgressStyle};
-// use vec3::Vec3;
 
 const IMAGE_WIDTH: u16 = 256;
 const IMAGE_HEIGHT: u16 = 256;
@@ -23,11 +23,8 @@ fn main() {
             let green = j as f32 / (IMAGE_HEIGHT - 1) as f32;
             let blue: f32 = 0.0;
 
-            let ired = (255.999 * red) as i32;
-            let igreen = (255.999 * green as f32) as i32;
-            let iblue = (255.999 * blue as f32) as i32;
-
-            println!("{} {} {}", ired, igreen, iblue);
+            let color = Color::new(red, green, blue);
+            println!("{}", color);
         }
     }
     bar.finish_and_clear();
