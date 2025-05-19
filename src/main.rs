@@ -1,3 +1,4 @@
+pub mod vec3;
 use indicatif::{ProgressBar, ProgressStyle};
 
 const IMAGE_WIDTH: u16 = 256;
